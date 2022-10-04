@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpHeight;
     [SerializeField] bool showGroundCheck;
 
-    [SerializeField] bool isGrounded;
+    public bool isGrounded { get; private set; }
     [SerializeField] Vector2 groundCheckOffset;
     [SerializeField] Vector2 groundCheckSize;
     [SerializeField] LayerMask groundLayerMask;
@@ -18,6 +18,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+    }
+
+    void OnDestroy()
+    {
+        gameManager.triggerGameOver();
     }
 
     void Update()
@@ -44,6 +49,9 @@ public class Player : MonoBehaviour
 
             GetComponent<Rigidbody2D>().velocity = velocity;
         }
+
+        //Defeat the player if they fall down a pit
+        if (transform.position.y < 2.0f) Destroy(gameObject);
     }
 
     void OnDrawGizmosSelected()
@@ -53,6 +61,26 @@ public class Player : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireCube(transform.position + (Vector3)groundCheckOffset, groundCheckSize);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D _collision)
+    {
+        //Kill player
+        if (_collision.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D _collision)
+    {
+        //Kill player
+        if (_collision.transform.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+            return;
         }
     }
 }

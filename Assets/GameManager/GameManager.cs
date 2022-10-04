@@ -17,14 +17,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform deathWall;
     [SerializeField] float deathWallMoveSpeed;
     [SerializeField] float deathWallAcceleration;
+    [SerializeField] float deathWallMaxMoveSpeed;
+    [SerializeField] float furthestDistance;
 
     [Header("UI")]
     [SerializeField] TMPro.TMP_Text scoreUI;
     [SerializeField] GameObject pauseScreen;
+    [SerializeField] GameObject gameOverScreen;
 
     void Start()
     {
-
+        
     }
 
     void Update()
@@ -46,7 +49,8 @@ public class GameManager : MonoBehaviour
 
         //Move Death Wall
         deathWall.transform.position += Vector3.right * deathWallMoveSpeed * Time.deltaTime;
-        deathWallMoveSpeed += deathWallAcceleration;
+        deathWallMoveSpeed += deathWallAcceleration * Time.deltaTime * Time.deltaTime;
+        if (deathWallMoveSpeed > deathWallMaxMoveSpeed) deathWallMoveSpeed = deathWallMaxMoveSpeed;
     }
 
     public void Pause()
@@ -61,5 +65,10 @@ public class GameManager : MonoBehaviour
         paused = false;
         pauseScreen.SetActive(false);
         Time.timeScale = 1.0f;
+    }
+
+    public void triggerGameOver()
+    {
+        gameOverScreen.SetActive(true);
     }
 }
