@@ -13,8 +13,8 @@ public class PathObject : MonoBehaviour
         if (pathCreator == null) return;
 
         //Set the distanceOnPath to loop to the begining of the path to avoid it reaching over the maximum float value
-        while (distanceOnPath > pathCreator.path.length * 2.0f) distanceOnPath -= pathCreator.path.length * 2.0f;
-
+        distanceOnPath = Mathf.Repeat(distanceOnPath, pathCreator.path.length * 2.0f);
+        
         //Set the platform position to the path
         transform.position = pathCreator.path.GetPointAtDistance(distanceOnPath, endOfPath);
     }
@@ -25,7 +25,7 @@ public class PathObject : MonoBehaviour
         distanceOnPath += Time.deltaTime * moveSpeed;
 
         //Set the distanceOnPath to loop to the begining of the path to avoid it reaching over the maximum float value
-        while (distanceOnPath > pathCreator.path.length * 2.0f) distanceOnPath -= pathCreator.path.length * 2.0f;
+        distanceOnPath = Mathf.Repeat(distanceOnPath, pathCreator.path.length * 2.0f);
 
         //Set the platform position to the path
         transform.position = pathCreator.path.GetPointAtDistance(distanceOnPath, endOfPath);
