@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
-    public uint score;
+    uint score;
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
+    public bool gameStarted { get; private set; } = false;
     public bool paused { get; private set; } = false;
 
     [Header("Level")]
@@ -21,18 +24,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] float furthestDistance;
 
     [Header("UI")]
+    [SerializeField] Canvas canvas;
     [SerializeField] TMPro.TMP_Text scoreUI;
     [SerializeField] GameObject pauseScreen;
     [SerializeField] GameObject gameOverScreen;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        scoreUI.text = score.ToString();
+        //Dont update game if it has not started
+        if (!gameStarted) return;
 
         //Shift objects back if the camera goes further than loopDistance
         if (Camera.main.transform.position.x > loopDistance)
@@ -69,6 +69,34 @@ public class GameManager : MonoBehaviour
 
     public void triggerGameOver()
     {
+        //Update High Score
+        int highScore = PlayerPrefs.GetInt("HighScore");
+        if (score > highScore) { highScore = (int)score; PlayerPrefs.SetInt("HighScore", highScore); }
+        
+        //Open GameOver Screen
         gameOverScreen.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        canvas.gameObject.SetActive(true);
+        gameStarted = true;
+    }
+
+    public void GoToTitle()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Restart()
+    {
+        GoToTitle();
+        Menus.playOnAwake = true;
+    }
+
+    public void AddScore(uint _score)
+    {
+        score += _score;
+        scoreUI.text = score.ToString();
     }
 }

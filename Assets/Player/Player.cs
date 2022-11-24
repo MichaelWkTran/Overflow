@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
-    [SerializeField] float jumpHeight;
+    public float moveSpeed;
+    public float jumpHeight;
     [SerializeField] bool showGroundCheck;
 
     public bool isGrounded { get; private set; }
@@ -13,16 +12,22 @@ public class Player : MonoBehaviour
     [SerializeField] Vector2 groundCheckSize;
     [SerializeField] LayerMask groundLayerMask;
 
+    [SerializeField] ParticleSystem deathParticle;
+
     GameManager gameManager;
+    Rigidbody2D rb;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void OnDestroy()
     {
-        gameManager.triggerGameOver();
+        deathParticle.transform.parent = null;
+        deathParticle.Play();
+        gameManager.Invoke("triggerGameOver", 1.0f);
     }
 
     void Update()
@@ -31,27 +36,33 @@ public class Player : MonoBehaviour
         isGrounded = Physics2D.OverlapBox((Vector2)transform.position + groundCheckOffset, groundCheckSize, 0, groundLayerMask);
 
         //Stop the player velocity when grounded
-        if (isGrounded && GetComponent<Rigidbody2D>().velocity.y <= 0)
+        if (isGrounded && rb.velocity.y <= 0)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, GetComponent<Rigidbody2D>().velocity.y);
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
 
         //Player Movment
-        if (isGrounded && (Input.GetKey("space") || Input.touchCount > 0 || Input.GetMouseButton(0)))
+        if
+        (
+            Input.GetButton("Jump") && isGrounded &&
+            !InputUtilities.IsMouseOverUI((RaycastResult _raycastResult)=>{return _raycastResult.gameObject.GetComponent<UnityEngine.UI.Selectable>() == null;})
+        )
         {
-            //Add score every jump
-            if (GetComponent<Rigidbody2D>().velocity.y <= 0.0f) gameManager.score++;
-
-            //Move the player
-            Vector2 velocity;
-            velocity.x = moveSpeed;
-            velocity.y = Mathf.Sqrt(2.0f * Physics2D.gravity.magnitude * GetComponent<Rigidbody2D>().gravityScale * jumpHeight);
-
-            GetComponent<Rigidbody2D>().velocity = velocity;
+            if (rb.velocity.y <= 0.0f) gameManager.AddScore(1U);
+            Jump();
         }
 
         //Defeat the player if they fall down a pit
         if (transform.position.y < 2.0f) Destroy(gameObject);
+    }
+
+    public void Jump()
+    {
+        Vector2 velocity;
+        velocity.x = moveSpeed;
+        velocity.y = Mathf.Sqrt(2.0f * Physics2D.gravity.magnitude * rb.gravityScale * jumpHeight);
+
+        rb.velocity = velocity;
     }
 
     void OnDrawGizmosSelected()

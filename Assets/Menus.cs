@@ -1,18 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Menus : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static bool playOnAwake = false;
+    [SerializeField] RectTransform titleScreen;
+
     void Start()
     {
-        
+        if (playOnAwake) StartGame();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if
+        (
+            Input.GetButton("Jump") && titleScreen.gameObject.activeSelf &&
+            !InputUtilities.IsMouseOverUI((RaycastResult _raycastResult) => { return _raycastResult.gameObject.GetComponent<Selectable>() == null; })
+        )
+        {
+            StartGame();
+            return;
+        }
+    }
+
+    public void StartGame()
+    {
+        playOnAwake = false;
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.gameObject.SetActive(true);
+        gameManager.StartGame();
+        Destroy(gameObject);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
