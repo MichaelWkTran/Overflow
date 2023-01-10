@@ -43,6 +43,20 @@ public class GameManager : MonoBehaviour
                 worldtransforms.position -= Vector3.right * loopDistance;
             }
 
+            //Shift all particles in the world back by loopDistance
+            foreach (ParticleSystem particleSystem in gameWorld.GetComponentsInChildren<ParticleSystem>())
+            {
+                ParticleSystem.Particle[] particles = new ParticleSystem.Particle[particleSystem.particleCount];
+                particleSystem.GetParticles(particles);
+
+                for (int i = 0; i < particles.Length; i++)
+                {
+                    particles[i].position -= Vector3.right * loopDistance;
+                }
+
+                particleSystem.SetParticles(particles);
+            }
+
             //Shift virtualCamera in world back by loopDistance
             virtualCamera.ForceCameraPosition(virtualCamera.transform.position -= Vector3.right * loopDistance, Quaternion.identity);
         }

@@ -12,15 +12,18 @@ public class Player : MonoBehaviour
     [SerializeField] Vector2 groundCheckSize;
     [SerializeField] LayerMask groundLayerMask;
 
+    [SerializeField] ParticleSystem jumpParticle;
     [SerializeField] ParticleSystem deathParticle;
 
     GameManager gameManager;
     Rigidbody2D rb;
+    Animator animator;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void OnDestroy()
@@ -53,7 +56,15 @@ public class Player : MonoBehaviour
         }
 
         //Defeat the player if they fall down a pit
-        if (transform.position.y < 2.0f) Destroy(gameObject);
+        if (transform.position.y < -2.0f) Destroy(gameObject);
+    }
+
+    void LateUpdate()
+    {
+        //Set Animations
+        if (isGrounded) animator.CrossFade("Idle", 0.0f);
+        else if (rb.velocity.y > 0.0f) animator.CrossFade("Jump", 0.0f);
+        else animator.CrossFade("Fall", 0.0f);
     }
 
     public void Jump()
@@ -63,6 +74,7 @@ public class Player : MonoBehaviour
         velocity.y = Mathf.Sqrt(2.0f * Physics2D.gravity.magnitude * rb.gravityScale * jumpHeight);
 
         rb.velocity = velocity;
+        jumpParticle.Play();
     }
 
     void OnDrawGizmosSelected()
