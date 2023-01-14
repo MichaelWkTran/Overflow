@@ -65,6 +65,13 @@ public class GameManager : MonoBehaviour
         deathWall.transform.position += Vector3.right * deathWallMoveSpeed * Time.deltaTime;
         deathWallMoveSpeed += deathWallAcceleration * Time.deltaTime * Time.deltaTime;
         if (deathWallMoveSpeed > deathWallMaxMoveSpeed) deathWallMoveSpeed = deathWallMaxMoveSpeed;
+
+        //Prevent the death wall from getting too far off screen
+        float cameraLeftWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane)).x;
+        if (cameraLeftWorldPosition - deathWall.position.x - furthestDistance > 0)
+        {
+            deathWall.position = new Vector3(cameraLeftWorldPosition - furthestDistance, deathWall.position.y, deathWall.position.z);
+        }
     }
 
     public void Pause()
