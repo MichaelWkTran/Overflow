@@ -72,6 +72,14 @@ public class GameManager : MonoBehaviour
         {
             deathWall.position = new Vector3(cameraLeftWorldPosition - furthestDistance, deathWall.position.y, deathWall.position.z);
         }
+
+        //Set the sprite mask of the death wall
+        {
+            SpriteRenderer[] deathWallSprites = deathWall.GetComponentsInChildren<SpriteRenderer>();
+            SpriteMask[] deathWallMask = deathWall.GetComponentsInChildren<SpriteMask>();
+
+            for (int i = 0; i < deathWallSprites.Length; i++) deathWallMask[i].sprite = deathWallSprites[i].sprite;
+        }
     }
 
     public void Pause()
