@@ -57,8 +57,10 @@ public class GameManager : MonoBehaviour
                 particleSystem.SetParticles(particles);
             }
 
+
             //Shift virtualCamera in world back by loopDistance
             virtualCamera.ForceCameraPosition(virtualCamera.transform.position -= Vector3.right * loopDistance, Quaternion.identity);
+            FindObjectOfType<ParallaxBackground>().ClearLastCameraPosition();
         }
 
         //Move Death Wall

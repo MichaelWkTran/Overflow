@@ -5,13 +5,20 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpHeight;
-    [SerializeField] bool showGroundCheck;
 
+    [Header("Dash Variables")]
+    public float dashSpeed;
+    public float dashHeight;
+    public float dashInputDistance; //How far does the player has to draw their finger or mouse
+
+    [Header("Grounded Variables")]
+    [SerializeField] bool showGroundCheck;
     public bool isGrounded { get; private set; }
     [SerializeField] Vector2 groundCheckOffset;
     [SerializeField] Vector2 groundCheckSize;
     [SerializeField] LayerMask groundLayerMask;
 
+    [Space]
     [SerializeField] ParticleSystem jumpParticle;
     [SerializeField] ParticleSystem deathParticle;
 
