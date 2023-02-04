@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ba14de222558b64eb8bdc98daad0774
+guid: c0cf907e1b725cf4db11d112ebef2a05
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -63,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -113,101 +113,110 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Puff_strip4_0
+      name: Waterfall_strip5_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 256
+        height: 144
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86819419561d3154287c4e1a369ea1b7
-      internalID: 1453276972
+      spriteID: e6478e8f6cc62754581241a26cf133fb
+      internalID: 880627159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Puff_strip4_1
+      name: Waterfall_strip5_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 256
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 256
+        height: 144
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae4905017944a7f42b20054a35bce400
-      internalID: 354825268
+      spriteID: 21c30ef9214ab4243b382e0257a76e52
+      internalID: 1931898074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Puff_strip4_2
+      name: Waterfall_strip5_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 512
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 256
+        height: 144
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fee6449747763f24aaa7a754e6268b1c
-      internalID: 665767715
+      spriteID: 2bffa683f94487742b8328d045b70cac
+      internalID: -1812299373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Puff_strip4_3
+      name: Waterfall_strip5_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 768
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 256
+        height: 144
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 245c8d2057916514b81cb9738889f5cf
-      internalID: 1014947008
+      spriteID: b9902e1a51e9d9f4db05fb5b5a7039b4
+      internalID: 1487484502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waterfall_strip5_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 144
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc253008a1d50fe4390d482604212cba
+      internalID: 1723386164
       vertices: []
       indices: 
       edges: []
@@ -223,10 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Puff_strip4_2: 665767715
-      Puff_strip4_3: 1014947008
-      Puff_strip4_1: 354825268
-      Puff_strip4_0: 1453276972
+      Waterfall_strip5_2: -1812299373
+      Waterfall_strip5_3: 1487484502
+      Waterfall_strip5_0: 880627159
+      Waterfall_strip5_1: 1931898074
+      Waterfall_strip5_4: 1723386164
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
