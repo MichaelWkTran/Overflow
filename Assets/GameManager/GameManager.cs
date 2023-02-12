@@ -1,57 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
-    uint score;
-    public Cinemachine.CinemachineVirtualCamera virtualCamera;
-    public bool gameStarted { get; private set; } = false;
-    public bool paused { get; private set; } = false;
+    uint m_score;
+    uint m_carrots;
+    public Cinemachine.CinemachineVirtualCamera m_virtualCamera;
+    public bool m_gameStarted { get; private set; } = false;
+    public bool m_paused { get; private set; } = false;
 
     [Header("Level")]
-    public GameObject[] levelSegments;
-    [SerializeField] Transform gameWorld;
-    [SerializeField] float loopDistance;
+    public GameObject[] m_levelSegments;
+    [SerializeField] Transform m_gameWorld;
+    [SerializeField] float m_loopDistance;
 
     [Header("Death Wall")]
-    [SerializeField] Transform deathWall;
-    [SerializeField] float deathWallMoveSpeed;
-    [SerializeField] float deathWallAcceleration;
-    [SerializeField] float deathWallMaxMoveSpeed;
-    [SerializeField] float furthestDistance;
+    [SerializeField] Transform m_deathWall;
+    [SerializeField] float m_deathWallMoveSpeed;
+    [SerializeField] float m_deathWallAcceleration;
+    [SerializeField] float m_deathWallMaxMoveSpeed;
+    [SerializeField] float m_furthestDistance;
 
     [Header("UI")]
-    [SerializeField] Canvas canvas;
-    [SerializeField] TMPro.TMP_Text scoreUI;
-    [SerializeField] GameObject pauseScreen;
-    [SerializeField] GameObject gameOverScreen;
+    [SerializeField] Canvas m_canvas;
+    [SerializeField] TMPro.TMP_Text m_scoreUI;
+    [SerializeField] GameObject m_pauseScreen;
+    [SerializeField] GameObject m_gameOverScreen;
+    [SerializeField] TMPro.TMP_Text m_gameOverScoreUI;
+    [SerializeField] TMPro.TMP_Text m_gameOverHighScoreUI;
 
     void Update()
     {
         //Dont update game if it has not started
-        if (!gameStarted) return;
+        if (!m_gameStarted) return;
 
         //Shift objects back if the camera goes further than loopDistance
-        if (Camera.main.transform.position.x > loopDistance)
+        if (Camera.main.transform.position.x > m_loopDistance)
         {
             //Shift all objects in world back by loopDistance
-            foreach (Transform worldtransforms in gameWorld)
+            foreach (Transform worldtransforms in m_gameWorld)
             {
-                worldtransforms.position -= Vector3.right * loopDistance;
+                worldtransforms.position -= Vector3.right * m_loopDistance;
             }
 
             //Shift all particles in the world back by loopDistance
-            foreach (ParticleSystem particleSystem in gameWorld.GetComponentsInChildren<ParticleSystem>())
+            foreach (ParticleSystem particleSystem in m_gameWorld.GetComponentsInChildren<ParticleSystem>())
             {
                 ParticleSystem.Particle[] particles = new ParticleSystem.Particle[particleSystem.particleCount];
                 particleSystem.GetParticles(particles);
 
                 for (int i = 0; i < particles.Length; i++)
                 {
-                    particles[i].position -= Vector3.right * loopDistance;
+                    particles[i].position -= Vector3.right * m_loopDistance;
                 }
 
                 particleSystem.SetParticles(particles);
@@ -59,26 +59,26 @@ public class GameManager : MonoBehaviour
 
 
             //Shift virtualCamera in world back by loopDistance
-            virtualCamera.ForceCameraPosition(virtualCamera.transform.position -= Vector3.right * loopDistance, Quaternion.identity);
+            m_virtualCamera.ForceCameraPosition(m_virtualCamera.transform.position -= Vector3.right * m_loopDistance, Quaternion.identity);
             FindObjectOfType<ParallaxBackground>().ClearLastCameraPosition();
         }
 
         //Move Death Wall
-        deathWall.transform.position += Vector3.right * deathWallMoveSpeed * Time.deltaTime;
-        deathWallMoveSpeed += deathWallAcceleration * Time.deltaTime * Time.deltaTime;
-        if (deathWallMoveSpeed > deathWallMaxMoveSpeed) deathWallMoveSpeed = deathWallMaxMoveSpeed;
+        m_deathWall.transform.position += Vector3.right * m_deathWallMoveSpeed * Time.deltaTime;
+        m_deathWallMoveSpeed += m_deathWallAcceleration * Time.deltaTime * Time.deltaTime;
+        if (m_deathWallMoveSpeed > m_deathWallMaxMoveSpeed) m_deathWallMoveSpeed = m_deathWallMaxMoveSpeed;
 
         //Prevent the death wall from getting too far off screen
         float cameraLeftWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane)).x;
-        if (cameraLeftWorldPosition - deathWall.position.x - furthestDistance > 0)
+        if (cameraLeftWorldPosition - m_deathWall.position.x - m_furthestDistance > 0)
         {
-            deathWall.position = new Vector3(cameraLeftWorldPosition - furthestDistance, deathWall.position.y, deathWall.position.z);
+            m_deathWall.position = new Vector3(cameraLeftWorldPosition - m_furthestDistance, m_deathWall.position.y, m_deathWall.position.z);
         }
 
         //Set the sprite mask of the death wall
         {
-            SpriteRenderer[] deathWallSprites = deathWall.GetComponentsInChildren<SpriteRenderer>();
-            SpriteMask[] deathWallMask = deathWall.GetComponentsInChildren<SpriteMask>();
+            SpriteRenderer[] deathWallSprites = m_deathWall.GetComponentsInChildren<SpriteRenderer>();
+            SpriteMask[] deathWallMask = m_deathWall.GetComponentsInChildren<SpriteMask>();
 
             for (int i = 0; i < deathWallSprites.Length; i++) deathWallMask[i].sprite = deathWallSprites[i].sprite;
         }
@@ -86,15 +86,15 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        paused = true;
-        pauseScreen.SetActive(true);
+        m_paused = true;
+        m_pauseScreen.SetActive(true);
         Time.timeScale = 0.0f;
     }
 
     public void UnPause()
     {
-        paused = false;
-        pauseScreen.SetActive(false);
+        m_paused = false;
+        m_pauseScreen.SetActive(false);
         Time.timeScale = 1.0f;
     }
 
@@ -102,32 +102,51 @@ public class GameManager : MonoBehaviour
     {
         //Update High Score
         int highScore = PlayerPrefs.GetInt("HighScore");
-        if (score > highScore) { highScore = (int)score; PlayerPrefs.SetInt("HighScore", highScore); }
+        if (m_score > highScore)
+        {
+            highScore = (int)m_score; PlayerPrefs.SetInt("HighScore", highScore);
+        }
+        else
+        {
+            //Update Score UI
+            m_gameOverScoreUI.text = "Score: " + m_score.ToString();
+            m_gameOverHighScoreUI.text = "High Score: " + highScore.ToString();
+        }
+
+        //Update Carrots
         
+
         //Open GameOver Screen
-        gameOverScreen.SetActive(true);
+        m_gameOverScreen.SetActive(true);
     }
 
     public void StartGame()
     {
-        canvas.gameObject.SetActive(true);
-        gameStarted = true;
+        m_canvas.gameObject.SetActive(true);
+        m_gameStarted = true;
     }
 
     public void GoToTitle()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Restart()
     {
+        Time.timeScale = 1.0f;
         GoToTitle();
-        Menus.playOnAwake = true;
+        Menus.m_playOnAwake = true;
     }
 
     public void AddScore(uint _score)
     {
-        score += _score;
-        scoreUI.text = score.ToString();
+        m_score += _score;
+        m_scoreUI.text = m_score.ToString();
+    }
+
+    public void AddCarrot(uint _carrots)
+    {
+        m_carrots += _carrots;
     }
 }

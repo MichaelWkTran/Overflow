@@ -23,7 +23,7 @@ public class LevelSegment : MonoBehaviour
             createdNextSegment = true;
             Instantiate
             (
-                gameManager.levelSegments[Random.Range(0, gameManager.levelSegments.Length)],
+                gameManager.m_levelSegments[Random.Range(0, gameManager.m_levelSegments.Length)],
                 transform.position + (Vector3.right * segmentWidth), Quaternion.identity
             ).transform.parent = transform.parent;
         }

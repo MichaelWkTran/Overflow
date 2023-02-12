@@ -20,4 +20,10 @@ public static class InputUtilities
 
         return false;
     }
+
+    public static bool CanUseJumpInput()
+    {
+        return Input.GetButton("Jump") && !IsMouseOverUI((RaycastResult _raycastResult) =>
+            { return _raycastResult.gameObject.layer != 2; });
+    }
 }

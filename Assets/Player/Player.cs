@@ -52,11 +52,7 @@ public class Player : MonoBehaviour
         }
 
         //Player Movment
-        if
-        (
-            Input.GetButton("Jump") && isGrounded &&
-            !InputUtilities.IsMouseOverUI((RaycastResult _raycastResult)=>{return _raycastResult.gameObject.GetComponent<UnityEngine.UI.Selectable>() == null;})
-        )
+        if (InputUtilities.CanUseJumpInput() && isGrounded)
         {
             if (rb.velocity.y <= 0.0f) gameManager.AddScore(1U);
             Jump();
@@ -69,7 +65,8 @@ public class Player : MonoBehaviour
     void LateUpdate()
     {
         //Set Animations
-        if (isGrounded) animator.CrossFade("Idle", 0.0f);
+        if (isGrounded && animator.GetCurrentAnimatorStateInfo(0).IsName("Jump")) animator.CrossFade("Land", 0.0f);
+        else if (isGrounded) { }
         else if (rb.velocity.y > 0.0f) animator.CrossFade("Jump", 0.0f);
         else animator.CrossFade("Fall", 0.0f);
     }

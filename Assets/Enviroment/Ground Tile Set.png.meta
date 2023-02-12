@@ -191,6 +191,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Ground Tile Set_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33054de7a18fcd34da52fbe0dbe85cf7
+      internalID: -1550557175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground Tile Set_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8c6430704ef534cb631df4f7ba3d30
+      internalID: -194093272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -203,6 +245,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Ground Tile Set_1: -758843304
+      Ground Tile Set_4: -194093272
+      Ground Tile Set_3: -1550557175
       Ground Tile Set_2: -1673690213
       Ground Tile Set_0: 2064658566
   spritePackingTag: 
