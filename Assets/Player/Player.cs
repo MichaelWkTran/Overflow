@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,26 +19,63 @@ public class Player : MonoBehaviour
     [SerializeField] Vector2 groundCheckSize;
     [SerializeField] LayerMask groundLayerMask;
 
-    [Space]
+    [Header("Particles")]
     [SerializeField] ParticleSystem jumpParticle;
-    [SerializeField] ParticleSystem deathParticle;
+    public ParticleSystem deathParticle;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip m_jumpSound;
+    [SerializeField] AudioClip m_landSound;
+    [SerializeField] AudioClip m_deathSound;
 
     GameManager gameManager;
     Rigidbody2D rb;
     Animator animator;
+    AudioSource m_audioSource;
 
     void Start()
     {
+        //Get Components
         gameManager = FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        m_audioSource = GetComponent<AudioSource>();
+
+        //Get the Current Skin
+        if (ShopItem.SkinData.m_currentSkin != null) ShopItem.SkinData.m_currentSkin.SetSkin();
     }
 
     void OnDestroy()
     {
-        deathParticle.transform.parent = null;
-        deathParticle.Play();
+        //Play the death animation
+        {
+            deathParticle.transform.parent = transform.parent;
+            deathParticle.gameObject.SetActive(true);
+            deathParticle.Play();
+        }
+
+        //Play the screen flash animation
+        {
+            gameManager.m_screenFlash.gameObject.SetActive(true);
+            gameManager.m_screenFlash.GetComponent<Animator>().Play("Screen Flash");
+            Destroy(gameManager.m_screenFlash, 1.0f);
+        }
+        
+        //Play the death sound effect
+        {
+            AudioSource deathSoundSource = new GameObject().AddComponent<AudioSource>();
+            deathSoundSource.outputAudioMixerGroup = m_audioSource.outputAudioMixerGroup;
+            deathSoundSource.clip = m_deathSound;
+            deathSoundSource.transform.position = transform.position;
+            Destroy(deathSoundSource.gameObject, m_deathSound.length);
+            deathSoundSource.Play();
+        }
+
+        //Open the game over screen
         gameManager.Invoke("triggerGameOver", 1.0f);
+
+        //Save the game
+        SaveSystem.Save();
     }
 
     void Update()
@@ -65,7 +103,16 @@ public class Player : MonoBehaviour
     void LateUpdate()
     {
         //Set Animations
-        if (isGrounded && animator.GetCurrentAnimatorStateInfo(0).IsName("Jump")) animator.CrossFade("Land", 0.0f);
+        if (isGrounded && animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        {
+            animator.CrossFade("Land", 0.0f);
+            if (rb.velocity.y <= 0.0f)
+            {
+                m_audioSource.clip = m_landSound;
+                m_audioSource.Play();
+            }
+            
+        }
         else if (isGrounded) { }
         else if (rb.velocity.y > 0.0f) animator.CrossFade("Jump", 0.0f);
         else animator.CrossFade("Fall", 0.0f);
@@ -79,6 +126,9 @@ public class Player : MonoBehaviour
 
         rb.velocity = velocity;
         jumpParticle.Play();
+        m_audioSource.Stop();
+        m_audioSource.clip = m_jumpSound;
+        m_audioSource.Play();
     }
 
     void OnDrawGizmosSelected()
