@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         m_m_audioSource = GetComponent<AudioSource>();
 
         //Get the Current Skin
-        if (ShopItem.SkinData.m_currentSkin != null) ShopItem.SkinData.m_currentSkin.SetSkin();
+        if (ShopItem.SkinData.m_currentSkin != null) ShopItem.SkinData.m_currentSkin.m_skin.SetSkin();
     }
 
     void OnDestroy()

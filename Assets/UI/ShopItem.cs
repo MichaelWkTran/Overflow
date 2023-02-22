@@ -13,7 +13,7 @@ public class ShopItem : MonoBehaviour
     #region Item Data Structs
     [Serializable] public class SkinData
     {
-        public static SkinData m_currentSkin = null;
+        public static ShopItem m_currentSkin = null;
         public RuntimeAnimatorController m_skin;
         public Sprite m_deathSprite;
 
@@ -60,9 +60,9 @@ public class ShopItem : MonoBehaviour
 
     public enum ItemDataType { Skin, Hat, Furniture }
     public ItemDataType m_itemDataType;
-    [SerializeField] SkinData m_skin;
-    [SerializeField] HatData m_hat;
-    [SerializeField] FurnitureData m_furniture;
+    public SkinData m_skin;
+    public HatData m_hat;
+    public FurnitureData m_furniture;
 
     Button m_itemButton;
     [SerializeField] RectTransform m_purchaseMessage;
@@ -93,7 +93,7 @@ public class ShopItem : MonoBehaviour
         //Use the item
         if (m_purchased) switch (m_itemDataType)
         {
-            case ItemDataType.Skin: SkinData.m_currentSkin = m_skin; m_skin.SetSkin();  break;
+            case ItemDataType.Skin: SkinData.m_currentSkin = this; m_skin.SetSkin();  break;
             case ItemDataType.Hat: HatData.m_currentHat = m_hat; break;
             case ItemDataType.Furniture: m_furniture.m_Enabled = true; break;
         }

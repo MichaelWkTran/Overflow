@@ -46,6 +46,8 @@ public static class SaveSystem
             }
 
         }
+        SkinData.m_currentSkin;
+
 
         //Get the file directory of the save data
         string path = Application.persistentDataPath + m_fileName;
