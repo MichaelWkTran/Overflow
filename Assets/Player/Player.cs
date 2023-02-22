@@ -28,18 +28,18 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip m_landSound;
     [SerializeField] AudioClip m_deathSound;
 
-    GameManager gameManager;
-    Rigidbody2D rb;
-    Animator animator;
-    AudioSource m_audioSource;
+    GameManager m_gameManager;
+    Rigidbody2D m_rb;
+    Animator m_animator;
+    AudioSource m_m_audioSource;
 
     void Start()
     {
         //Get Components
-        gameManager = FindObjectOfType<GameManager>();
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        m_audioSource = GetComponent<AudioSource>();
+        m_gameManager = FindObjectOfType<GameManager>();
+        m_rb = GetComponent<Rigidbody2D>();
+        m_animator = GetComponent<Animator>();
+        m_m_audioSource = GetComponent<AudioSource>();
 
         //Get the Current Skin
         if (ShopItem.SkinData.m_currentSkin != null) ShopItem.SkinData.m_currentSkin.SetSkin();
@@ -56,15 +56,15 @@ public class Player : MonoBehaviour
 
         //Play the screen flash animation
         {
-            gameManager.m_screenFlash.gameObject.SetActive(true);
-            gameManager.m_screenFlash.GetComponent<Animator>().Play("Screen Flash");
-            Destroy(gameManager.m_screenFlash, 1.0f);
+            m_gameManager.m_screenFlash.gameObject.SetActive(true);
+            m_gameManager.m_screenFlash.GetComponent<Animator>().Play("Screen Flash");
+            Destroy(m_gameManager.m_screenFlash, 1.0f);
         }
         
         //Play the death sound effect
         {
             AudioSource deathSoundSource = new GameObject().AddComponent<AudioSource>();
-            deathSoundSource.outputAudioMixerGroup = m_audioSource.outputAudioMixerGroup;
+            deathSoundSource.outputAudioMixerGroup = m_m_audioSource.outputAudioMixerGroup;
             deathSoundSource.clip = m_deathSound;
             deathSoundSource.transform.position = transform.position;
             Destroy(deathSoundSource.gameObject, m_deathSound.length);
@@ -72,10 +72,7 @@ public class Player : MonoBehaviour
         }
 
         //Open the game over screen
-        gameManager.Invoke("triggerGameOver", 1.0f);
-
-        //Save the game
-        SaveSystem.Save();
+        m_gameManager.Invoke("triggerGameOver", 1.0f);
     }
 
     void Update()
@@ -84,15 +81,15 @@ public class Player : MonoBehaviour
         isGrounded = Physics2D.OverlapBox((Vector2)transform.position + groundCheckOffset, groundCheckSize, 0, groundLayerMask);
 
         //Stop the player velocity when grounded
-        if (isGrounded && rb.velocity.y <= 0)
+        if (isGrounded && m_rb.velocity.y <= 0)
         {
-            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+            m_rb.velocity = new Vector2(0.0f, m_rb.velocity.y);
         }
 
         //Player Movment
         if (InputUtilities.CanUseJumpInput() && isGrounded)
         {
-            if (rb.velocity.y <= 0.0f) gameManager.AddScore(1U);
+            if (m_rb.velocity.y <= 0.0f) m_gameManager.AddScore(1U);
             Jump();
         }
 
@@ -103,32 +100,32 @@ public class Player : MonoBehaviour
     void LateUpdate()
     {
         //Set Animations
-        if (isGrounded && animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        if (isGrounded && m_animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
         {
-            animator.CrossFade("Land", 0.0f);
-            if (rb.velocity.y <= 0.0f)
+            m_animator.Play("Land");
+            if (m_rb.velocity.y <= 0.0f)
             {
-                m_audioSource.clip = m_landSound;
-                m_audioSource.Play();
+                m_m_audioSource.clip = m_landSound;
+                m_m_audioSource.Play();
             }
             
         }
         else if (isGrounded) { }
-        else if (rb.velocity.y > 0.0f) animator.CrossFade("Jump", 0.0f);
-        else animator.CrossFade("Fall", 0.0f);
+        else if (m_rb.velocity.y > 0.0f) m_animator.Play("Jump");
+        else m_animator.Play("Fall");
     }
 
     public void Jump()
     {
         Vector2 velocity;
         velocity.x = moveSpeed;
-        velocity.y = Mathf.Sqrt(2.0f * Physics2D.gravity.magnitude * rb.gravityScale * jumpHeight);
+        velocity.y = Mathf.Sqrt(2.0f * Physics2D.gravity.magnitude * m_rb.gravityScale * jumpHeight);
 
-        rb.velocity = velocity;
+        m_rb.velocity = velocity;
         jumpParticle.Play();
-        m_audioSource.Stop();
-        m_audioSource.clip = m_jumpSound;
-        m_audioSource.Play();
+        m_m_audioSource.Stop();
+        m_m_audioSource.clip = m_jumpSound;
+        m_m_audioSource.Play();
     }
 
     void OnDrawGizmosSelected()

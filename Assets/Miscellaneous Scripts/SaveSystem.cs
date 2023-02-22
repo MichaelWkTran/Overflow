@@ -1,13 +1,14 @@
-using Unity.VisualScripting;
 using System;
 using System.IO;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
+using static ShopItem;
 
 public static class SaveSystem
 {
     const string m_fileName = "/Save.bb";
+
     [Serializable] public class SaveData
     {
         //Game Variables
@@ -24,26 +25,46 @@ public static class SaveSystem
         public float m_musicVolume;
         public int m_qualityLevel;
     }
-    public static SaveData m_data;
+    public static SaveData m_data = new SaveData();
 
     public static void Save()
     {
+        foreach(ShopItem shopItem in MonoBehaviour.FindObjectsOfType<ShopItem>())
+        {
+            m_data.m_purchasedItems[shopItem.m_name] = shopItem.m_purchased;
+            switch (shopItem.m_itemDataType)
+            {
+                case ItemDataType.Skin: 
+                    
+                    break;
+                case ItemDataType.Hat: 
+                    
+                    break;
+                case ItemDataType.Furniture: 
+                    
+                    break;
+            }
+
+        }
+
         //Get the file directory of the save data
         string path = Application.persistentDataPath + m_fileName;
-
+        
         //Create and open file stream
         FileStream stream = new FileStream(path, FileMode.Create);
 
         //Create binary formatter and serialize the game data
         BinaryFormatter formatter = new BinaryFormatter();
         formatter.Serialize(stream, m_data);
-        
+
         //Close the file stream
         stream.Close();
     }
 
     public static void Load()
     {
+
+
         //Get the file directory of the save data
         string path = Application.persistentDataPath + m_fileName;
 

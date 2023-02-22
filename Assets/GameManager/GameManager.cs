@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    static bool m_applicationStarted = false;
+
     uint m_score; //The score of the current game
     uint m_carrots; //The number of carrots the player has collected in a game
     public Cinemachine.CinemachineVirtualCamera m_virtualCamera; //Main Camera
@@ -36,7 +38,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        SaveSystem.Load();
+        //Load the game when the application has started
+        if (!m_applicationStarted) { m_applicationStarted = true; SaveSystem.Load(); }
     }
 
     void Update()
@@ -99,6 +102,20 @@ public class GameManager : MonoBehaviour
             m_virtualCamera.ForceCameraPosition(m_virtualCamera.transform.position -= Vector3.right * m_loopDistance, Quaternion.identity);
             FindObjectOfType<ParallaxBackground>().ClearLastCameraPosition();
         }
+    }
+
+    void OnApplicationPause(bool _pause)
+    {
+        if (!_pause) return;
+
+        //Pause the game when the application is not in focus
+        if (!m_paused && m_gameStarted) Pause();
+    }
+
+    void OnApplicationQuit()
+    {
+        //Save the game when the player exits the application
+        SaveSystem.Save();
     }
 
     public void Pause()
