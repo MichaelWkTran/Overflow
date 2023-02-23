@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : ShopItem.ItemData
 {
     static bool m_applicationStarted = false;
 
@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
                                             //(Used so that all objects inside can be pushed back when the player goes too far ahead)
     [SerializeField] float m_loopDistance; //The max distance the player can go before they are pushed back
                                            //to prevent the player from going too far from origin
-
+    public LevelSegment m_titleLevelSegment; //The level segment in the title screen
+    
     [Header("Death Wall")]
     [SerializeField] Transform m_deathWall;
     [SerializeField] float m_deathWallMoveSpeed;

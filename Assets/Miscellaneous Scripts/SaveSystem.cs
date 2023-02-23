@@ -29,24 +29,24 @@ public static class SaveSystem
 
     public static void Save()
     {
-        foreach(ShopItem shopItem in MonoBehaviour.FindObjectsOfType<ShopItem>())
-        {
-            m_data.m_purchasedItems[shopItem.m_name] = shopItem.m_purchased;
-            switch (shopItem.m_itemDataType)
-            {
-                case ItemDataType.Skin: 
-                    
-                    break;
-                case ItemDataType.Hat: 
-                    
-                    break;
-                case ItemDataType.Furniture: 
-                    
-                    break;
-            }
-
-        }
-        SkinData.m_currentSkin;
+        //foreach(ShopItem shopItem in MonoBehaviour.FindObjectsOfType<ShopItem>())
+        //{
+        //    m_data.m_purchasedItems[shopItem.m_name] = shopItem.m_purchased;
+        //    switch (shopItem.m_itemDataType)
+        //    {
+        //        case ItemDataType.Skin: 
+        //            
+        //            break;
+        //        case ItemDataType.Hat: 
+        //            
+        //            break;
+        //        case ItemDataType.Furniture: 
+        //            
+        //            break;
+        //    }
+        //
+        //}
+        //SkinData.m_currentSkin;
 
 
         //Get the file directory of the save data
