@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : ShopItem.ItemData
+public class GameManager : MonoBehaviour
 {
     static bool m_applicationStarted = false;
 

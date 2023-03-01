@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,28 +8,32 @@ public class ShopItem : MonoBehaviour
     public uint m_price; //The price of the shop item
     public bool m_purchased; //Whether the item has been purchased
 
-    [DisallowMultipleComponent] public abstract class ItemData : MonoBehaviour { public ShopItem m_shopItem; }
-    [SerializeField] ItemData m_itemData; //The type of data from which the shop item stores
+    [DisallowMultipleComponent] public abstract class ItemData : MonoBehaviour
+    {
+        protected ShopItem m_shopItem;
+        virtual protected void Start()
+        {
+            m_shopItem = GetComponent<ShopItem>();
+            Load();
+        }
+        public abstract void OnClick();
+        protected abstract void Load();
+    }
+
+    ItemData m_itemData; //The type of data from which the shop item stores
     [SerializeField] Button m_itemButton; //The button from which the player uses to purchase the item
     [SerializeField] RectTransform m_purchaseMessage; //The message that appears when the player selects that item to purchase
     [SerializeField] TMPro.TMP_Text m_priceText; //The text that shows the price of the item
 
     void Start()
     {
-        //Print an error when m_itemData has not been set 
-        if (m_itemData == null)
-        {
-            Debug.LogError("Any GameObject using the ShopItem component must have a component inheriting from ItemData");
-        }
+        m_itemData = GetComponent<ItemData>();
 
-        //Set 
-        m_priceText
-    }
+        //Load shop item data
+        Load();
 
-    void OnValidate()
-    {
-        //Set m_shopItem of the item data
-        if (m_itemData != null) m_itemData.m_shopItem = this;
+        //Display the price of the shop item
+        m_priceText.text = m_price.ToString();
     }
 
     void Update()
@@ -41,7 +43,7 @@ public class ShopItem : MonoBehaviour
             m_purchaseMessage.gameObject.SetActive(false);
     }
 
-    public void OnPressed()
+    public void OnClick()
     {
         //Checks whether the player first selects the button, if so enable the purchase message
         if (!m_purchaseMessage.gameObject.activeSelf && !m_purchased)
@@ -51,14 +53,21 @@ public class ShopItem : MonoBehaviour
         }
 
         //If the purchase message is open, then purchase the item
-        if (m_purchaseMessage.gameObject.activeSelf && !m_purchased) m_purchased = true;
+        if (m_purchaseMessage.gameObject.activeSelf && !m_purchased)
+        {
+            m_purchased = true;
+
+            //Save Data
+            //SaveSystem.m_data.m_purchasedItems.Add(m_name);
+        }
 
         //Use the item
-        //if (m_purchased) switch (m_itemDataType)
-        //{
-        //    case ItemDataType.Skin: SkinData.m_currentSkin = this; m_skin.SetSkin();  break;
-        //    case ItemDataType.Hat: HatData.m_currentHat = m_hat; break;
-        //    case ItemDataType.Furniture: m_furniture.m_Enabled = true; break;
-        //}
+        if (m_purchased) m_itemData.OnClick();
+    }
+
+    void Load()
+    {
+        //Load the data of whether the player previously purchased this shop item
+        m_purchased = SaveSystem.m_data.m_purchasedItems.Contains(m_name);
     }
 }

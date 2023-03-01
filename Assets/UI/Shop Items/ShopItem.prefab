@@ -274,7 +274,7 @@ MonoBehaviour:
   m_itemData: {fileID: 0}
   m_itemButton: {fileID: 6747337592735273260}
   m_purchaseMessage: {fileID: 792238388047415988}
-  m_priceText: {fileID: 8884948185837555054}
+  m_priceText: {fileID: 6568432372574972558}
 --- !u!222 &4639413555976815010
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7420358806494996974}
         m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
-        m_MethodName: OnPressed
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

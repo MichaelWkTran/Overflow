@@ -3,8 +3,8 @@ using System.IO;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
-using static ShopItem;
 
+//Note that this system is only loading and saving data to m_data and does not interact with external information
 public static class SaveSystem
 {
     const string m_fileName = "/Save.bb";
@@ -15,10 +15,10 @@ public static class SaveSystem
         public int m_highScore;
         public float m_carrots;
 
-        public Dictionary<string, bool> m_purchasedItems = new Dictionary<string /*Name of shop item*/, bool /*Whether the item is purchased*/>();
+        public HashSet<string /*Name of shop item*/> m_purchasedItems = new HashSet<string>();
         public string m_currentSkinName;
         public string m_currentHatName;
-        public Dictionary<string, bool> m_enabledFurniture = new Dictionary<string /*Name of furniture*/, bool /*Whether the item is enabled*/>();
+        public HashSet<string /*Name of furniture*/> m_enabledFurniture = new HashSet<string>();
 
         //Settings
         public float m_sfxVolume;
@@ -27,28 +27,9 @@ public static class SaveSystem
     }
     public static SaveData m_data = new SaveData();
 
+    //Saves the data from m_data to the file, Application.persistentDataPath + m_fileName
     public static void Save()
     {
-        //foreach(ShopItem shopItem in MonoBehaviour.FindObjectsOfType<ShopItem>())
-        //{
-        //    m_data.m_purchasedItems[shopItem.m_name] = shopItem.m_purchased;
-        //    switch (shopItem.m_itemDataType)
-        //    {
-        //        case ItemDataType.Skin: 
-        //            
-        //            break;
-        //        case ItemDataType.Hat: 
-        //            
-        //            break;
-        //        case ItemDataType.Furniture: 
-        //            
-        //            break;
-        //    }
-        //
-        //}
-        //SkinData.m_currentSkin;
-
-
         //Get the file directory of the save data
         string path = Application.persistentDataPath + m_fileName;
         
@@ -63,10 +44,9 @@ public static class SaveSystem
         stream.Close();
     }
 
+    //Loads the data stored in Application.persistentDataPath + m_fileName to m_data
     public static void Load()
     {
-
-
         //Get the file directory of the save data
         string path = Application.persistentDataPath + m_fileName;
 
