@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] RectTransform m_gameOverScreen;
     [SerializeField] TMPro.TMP_Text m_gameOverScoreUI; //The text that displays the current score of a game in the game over screen
     [SerializeField] TMPro.TMP_Text m_gameOverHighScoreUI; //The text that displays the highscore in the game over screen
+    [SerializeField] TMPro.TMP_Text m_gameOverNewHighScoreUI; //The text that displays the new highscore in the game over screen
     public Image m_screenFlash; //The screen flash animation when the player dies
 
     void Awake()
@@ -136,7 +137,14 @@ public class GameManager : MonoBehaviour
     public void triggerGameOver()
     {
         //Update High Score
-        if (m_score > SaveSystem.m_data.m_highScore) SaveSystem.m_data.m_highScore = (int)m_score;
+        if (m_score > SaveSystem.m_data.m_highScore)
+        {
+            //Update Score UI and HighScore
+            m_gameOverScoreUI.gameObject.SetActive(false);
+            m_gameOverHighScoreUI.gameObject.SetActive(false);
+            m_gameOverNewHighScoreUI.gameObject.SetActive(true);
+            m_gameOverNewHighScoreUI.text = "NEW HIGH SCORE!!!\n" + (SaveSystem.m_data.m_highScore = (int)m_score);
+        }
         else
         {
             //Update Score UI
