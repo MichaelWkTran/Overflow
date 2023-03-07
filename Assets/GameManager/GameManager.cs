@@ -1,10 +1,12 @@
+using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    static bool m_applicationStarted = false;
+    public static bool m_applicationStarted = false;
 
     uint m_score; //The score of the current game
     uint m_carrots; //The number of carrots the player has collected in a game
@@ -48,6 +50,9 @@ public class GameManager : MonoBehaviour
     {
         //Dont update game if it has not started
         if (!m_gameStarted) return;
+
+        //Pause/Unpause the game
+        if (Input.GetKeyDown(KeyCode.Escape)) if (!m_paused) Pause(); else UnPause();
 
         //Move Death Wall
         m_deathWall.transform.position += Vector3.right * m_deathWallMoveSpeed * Time.deltaTime;
@@ -136,6 +141,8 @@ public class GameManager : MonoBehaviour
 
     public void triggerGameOver()
     {
+        m_gameStarted = false;
+
         //Update High Score
         if (m_score > SaveSystem.m_data.m_highScore)
         {
@@ -176,6 +183,36 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
         GoToTitle();
         Menus.m_playOnAwake = true;
+    }
+
+    public void ShareHighScore()
+    {
+        //This function takes a screenshot and shares it. Used for sharing highscores.
+
+        IEnumerator TakeScreenshotAndShare()
+        {
+            yield return new WaitForEndOfFrame();
+
+#if UNITY_ANDROID || UNITY_IOS
+            //Takes the screen shot
+            Texture2D screenShot = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+            screenShot.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+            screenShot.Apply();
+
+            string filePath = Path.Combine(Application.temporaryCachePath, "shared img.png");
+            File.WriteAllBytes(filePath, screenShot.EncodeToPNG());
+
+            //Destroy screenshot to avoid memory leaks
+            Destroy(screenShot);
+
+            new NativeShare().AddFile(filePath)
+                .SetSubject("Subject goes here")
+                .SetText(SaveSystem.m_data.m_highScore.ToString() + " points!" + "New High Score!")
+                .SetUrl("https://github.com/yasirkula/UnityNativeShare").Share();
+#endif
+        }
+
+        TakeScreenshotAndShare();
     }
 
     public void AddScore(uint _score)

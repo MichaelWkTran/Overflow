@@ -31,7 +31,7 @@ public class SkinItem : ShopItem.ItemData
     protected override void Load()
     {
         //Load data on whether the player had enabled this skin
-        if (m_data.m_currentSkinName == m_shopItem.name)
+        if (m_data.m_currentSkinName == m_shopItem.m_name)
         {
             m_currentSkin = this;
             SetSkin();

@@ -6,7 +6,12 @@ public class ShopItem : MonoBehaviour
 {
     public string m_name; //The name of the shop item
     public uint m_price; //The price of the shop item
-    public bool m_purchased; //Whether the item has been purchased
+    [SerializeField] bool m_purchased; //Whether the item has been purchased
+    public bool m_Purchased
+    {
+        get { return m_purchased; }
+        set { m_priceText.gameObject.SetActive(!(m_purchased = value)); }
+    }
 
     [DisallowMultipleComponent] public abstract class ItemData : MonoBehaviour
     {
@@ -38,36 +43,40 @@ public class ShopItem : MonoBehaviour
 
     void Update()
     {
+        //Disable the shop item button when the player does not have enough carrots
+        m_itemButton.interactable = m_Purchased || m_price <= SaveSystem.m_data.m_carrots;
+
         //Disable the purchase message when the button is purchased or deselected
-        if (m_purchased || EventSystem.current.currentSelectedGameObject != m_itemButton.gameObject)
+        if (m_Purchased || EventSystem.current.currentSelectedGameObject != m_itemButton.gameObject)
             m_purchaseMessage.gameObject.SetActive(false);
     }
 
     public void OnClick()
     {
         //Checks whether the player first selects the button, if so enable the purchase message
-        if (!m_purchaseMessage.gameObject.activeSelf && !m_purchased)
+        if (!m_purchaseMessage.gameObject.activeSelf && !m_Purchased)
         {
             m_purchaseMessage.gameObject.SetActive(true);
             return;
         }
 
         //If the purchase message is open, then purchase the item
-        if (m_purchaseMessage.gameObject.activeSelf && !m_purchased)
+        if (m_purchaseMessage.gameObject.activeSelf && !m_Purchased)
         {
-            m_purchased = true;
+            SaveSystem.m_data.m_carrots -= m_price;
+            m_Purchased = true;
 
             //Save Data
-            //SaveSystem.m_data.m_purchasedItems.Add(m_name);
+            SaveSystem.m_data.AddPurchasedItem(m_name);
         }
 
         //Use the item
-        if (m_purchased) m_itemData.OnClick();
+        if (m_Purchased) m_itemData.OnClick();
     }
 
     void Load()
     {
         //Load the data of whether the player previously purchased this shop item
-        m_purchased = SaveSystem.m_data.m_purchasedItems.Contains(m_name);
+        m_Purchased = SaveSystem.m_data.m_purchasedItems.Contains(m_name);
     }
 }

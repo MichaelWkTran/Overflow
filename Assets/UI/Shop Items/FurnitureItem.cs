@@ -17,7 +17,7 @@ public class FurnitureItem : ShopItem.ItemData
             if (m_furnitureObject != null) m_furnitureObject.gameObject.SetActive(m_enabled);
             
             //Save data on whether the furniture is enabled
-            if (m_enabled) m_data.m_enabledFurniture.Add(m_shopItem.m_name);
+            if (m_enabled) m_data.AddFurnitureItem(m_shopItem.m_name);
             else m_data.m_enabledFurniture.Remove(m_shopItem.m_name);
         }
     }

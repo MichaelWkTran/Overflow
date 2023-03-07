@@ -24,6 +24,29 @@ public static class SaveSystem
         public float m_sfxVolume;
         public float m_musicVolume;
         public int m_qualityLevel;
+
+        //Methods
+        void SafeAddHashSet<T>(ref HashSet<T> _set, T _value)
+        {
+            T[] copySetArray = new T[_set.Count];
+            _set.CopyTo(copySetArray);
+
+            HashSet<T> newSet = new HashSet<T>();
+            foreach (T setValue in copySetArray) newSet.Add(setValue);
+
+            newSet.Add(_value);
+            _set = newSet;
+        }
+
+        public void AddPurchasedItem(string _itemName)
+        {
+            SafeAddHashSet(ref m_purchasedItems, _itemName);
+        }
+
+        public void AddFurnitureItem(string _itemName)
+        {
+            SafeAddHashSet(ref m_enabledFurniture, _itemName);
+        }
     }
     public static SaveData m_data = new SaveData();
 

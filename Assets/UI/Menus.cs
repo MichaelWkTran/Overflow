@@ -14,7 +14,7 @@ public class Menus : MonoBehaviour
     [Header("Settings Screen")]
     [SerializeField] RectTransform m_settingsScreen;
     [SerializeField] UnityEngine.Audio.AudioMixer m_audioMixer;
-    [SerializeField] Slider m_vfxVolumeSlider;
+    [SerializeField] Slider m_sfxVolumeSlider;
     [SerializeField] Slider m_musicVolumeSlider;
     [SerializeField] TMPro.TMP_Dropdown m_graphicsDropdown;
 
@@ -22,6 +22,7 @@ public class Menus : MonoBehaviour
     [SerializeField] RectTransform m_shopScreen;
     [SerializeField] ToggleGroup m_shopTabsToggleGroup;
     [SerializeField] RectTransform m_shopContent;
+    [SerializeField] TMPro.TMP_Text m_shopCarrotText;
 
     void Start()
     {
@@ -30,20 +31,30 @@ public class Menus : MonoBehaviour
         else
         {
             //Set the high score text on the title screen
-            int highScore = PlayerPrefs.GetInt("HighScore");
+            int highScore = SaveSystem.m_data.m_highScore;
             if (highScore > 0) m_highScoreText.text = "High Score: " + highScore.ToString();
             else m_highScoreText.gameObject.SetActive(false);
 
             //Set settings in settings menu
+            if (GameManager.m_applicationStarted)
             {
-                float vfxVolumeValue; m_audioMixer.GetFloat("sfxVolume", out vfxVolumeValue);
-                m_vfxVolumeSlider.value = vfxVolumeValue;
+                m_audioMixer.SetFloat("sfxVolume", SaveSystem.m_data.m_sfxVolume);
+                m_audioMixer.SetFloat("musicVolume", SaveSystem.m_data.m_musicVolume);
+                QualitySettings.SetQualityLevel(SaveSystem.m_data.m_qualityLevel);
+            }
+
+            {
+                float sfxVolumeValue; m_audioMixer.GetFloat("sfxVolume", out sfxVolumeValue);
+                m_sfxVolumeSlider.value = sfxVolumeValue;
             }
             {
                 float musicVolumeValue; m_audioMixer.GetFloat("musicVolume", out musicVolumeValue);
                 m_musicVolumeSlider.value = musicVolumeValue;
             }
             m_graphicsDropdown.value = QualitySettings.GetQualityLevel();
+
+            //Set number of carrots collected to text in shop
+            m_shopCarrotText.text = SaveSystem.m_data.m_carrots.ToString();
         }
     }
 
@@ -78,20 +89,17 @@ public class Menus : MonoBehaviour
     #region Settings Menu
     public void SetSFXVolume(float _value)
     {
-        m_audioMixer.SetFloat("sfxVolume", _value);
-        PlayerPrefs.SetFloat("SFXVolume", _value);
+        m_audioMixer.SetFloat("sfxVolume", SaveSystem.m_data.m_sfxVolume = _value);
     }
 
     public void SetMusicVolume(float _value)
     {
-        m_audioMixer.SetFloat("musicVolume", _value);
-        PlayerPrefs.SetFloat("MusicVolume", _value);
+        m_audioMixer.SetFloat("musicVolume", SaveSystem.m_data.m_musicVolume = _value);
     }
 
     public void SetQuality(int _qualityIndex)
     {
-        QualitySettings.SetQualityLevel(_qualityIndex);
-        PlayerPrefs.SetInt("QualityLevel", _qualityIndex);
+        QualitySettings.SetQualityLevel(SaveSystem.m_data.m_qualityLevel = _qualityIndex);
     }
     #endregion
 
@@ -114,8 +122,17 @@ public class Menus : MonoBehaviour
     }
     #endregion
 
+    #region Credits Menu
+    public void OpenURL(string _url)
+    {
+        Application.OpenURL(_url);
+    }
+    #endregion Credits Menu
+
+    #region Exit Menu
     public void ExitGame()
     {
         Application.Quit();
     }
+    #endregion
 }
