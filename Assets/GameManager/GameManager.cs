@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMPro.TMP_Text m_gameOverHighScoreUI; //The text that displays the highscore in the game over screen
     [SerializeField] TMPro.TMP_Text m_gameOverNewHighScoreUI; //The text that displays the new highscore in the game over screen
     public Image m_screenFlash; //The screen flash animation when the player dies
+    [SerializeField] AudioSource m_musicSource; //The audio source where the music is from
 
     void Awake()
     {
@@ -169,6 +170,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         m_canvas.gameObject.SetActive(true);
+        m_musicSource.Play();
         m_gameStarted = true;
     }
 
@@ -206,9 +208,9 @@ public class GameManager : MonoBehaviour
             Destroy(screenShot);
 
             new NativeShare().AddFile(filePath)
-                .SetSubject("Subject goes here")
-                .SetText(SaveSystem.m_data.m_highScore.ToString() + " points!" + "New High Score!")
-                .SetUrl("https://github.com/yasirkula/UnityNativeShare").Share();
+                .SetSubject("Awesome score from Overflow")
+                .SetText(SaveSystem.m_data.m_highScore.ToString() + " points!" + "I'm on a roll!")
+                .SetUrl("https://birdbraingamesdev.itch.io/").Share();
 #endif
         }
 

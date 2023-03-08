@@ -1,6 +1,8 @@
 using PathCreation;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [RequireComponent(typeof(PathCreator), typeof(LineRenderer))]
 public class PathRenderer : MonoBehaviour
@@ -30,6 +32,7 @@ public class PathRenderer : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(PathRenderer))]
 [CanEditMultipleObjects]
 public class PathRendererEditor : Editor
@@ -46,3 +49,4 @@ public class PathRendererEditor : Editor
         }
     }
 }
+#endif
