@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (m_gameOverScreen.gameObject.activeSelf)
+        {
+            if (Input.GetButtonDown("Jump")) Restart();
+        }
+
         //Dont update game if it has not started
         if (!m_gameStarted) return;
 
