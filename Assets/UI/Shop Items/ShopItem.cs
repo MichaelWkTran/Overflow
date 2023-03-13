@@ -18,6 +18,7 @@ public class ShopItem : MonoBehaviour
         protected ShopItem m_shopItem;
         virtual protected void Start()
         {
+            Debug.Log("asd");
             m_shopItem = GetComponent<ShopItem>();
             Load();
         }

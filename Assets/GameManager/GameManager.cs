@@ -49,13 +49,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (m_gameOverScreen.gameObject.activeSelf)
-        {
-            if (Input.GetButtonDown("Jump")) Restart();
-        }
-
         //Dont update game if it has not started
         if (!m_gameStarted) return;
+
+        //If game over screen is active press space to restart the game
+        if (m_gameOverScreen.gameObject.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.Space)) Restart();
+        }
 
         //Pause/Unpause the game
         if (Input.GetKeyDown(KeyCode.Escape)) if (!m_paused) Pause(); else UnPause();
@@ -133,6 +134,8 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
+        if (m_gameOverScreen.gameObject.activeSelf) return;
+
         m_paused = true;
         m_pauseScreen.gameObject.SetActive(true);
         Time.timeScale = 0.0f;
@@ -140,6 +143,8 @@ public class GameManager : MonoBehaviour
 
     public void UnPause()
     {
+        if (m_gameOverScreen.gameObject.activeSelf) return;
+
         m_paused = false;
         m_pauseScreen.gameObject.SetActive(false);
         Time.timeScale = 1.0f;
@@ -147,8 +152,6 @@ public class GameManager : MonoBehaviour
 
     public void triggerGameOver()
     {
-        m_gameStarted = false;
-
         //Update High Score
         if (m_score > SaveSystem.m_data.m_highScore)
         {
