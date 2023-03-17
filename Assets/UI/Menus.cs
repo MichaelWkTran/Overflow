@@ -20,25 +20,21 @@ public class Menus : MonoBehaviour
     [SerializeField] TMPro.TMP_Dropdown m_graphicsDropdown;
 
     [Header("ShopScreen")]
+    public ShopItemData[] m_shopItems;
     [SerializeField] RectTransform m_shopScreen;
     [SerializeField] ToggleGroup m_shopTabsToggleGroup;
     [SerializeField] RectTransform m_shopContent;
     [SerializeField] TMPro.TMP_Text m_shopCarrotText;
 
-    //void Awake()
-    //{
-    //    //Trigger the shop so that hte skins are loaded
-    //    {
-    //        IEnumerator EnableShopForFrame()
-    //        {
-    //            m_shopScreen.gameObject.SetActive(true);
-    //            yield return new WaitForSeconds(0.0f);
-    //            m_shopScreen.gameObject.SetActive(false);
-    //        }
-
-    //        StartCoroutine(EnableShopForFrame());
-    //    }
-    //}
+    void Awake()
+    {
+        //load shop data
+        foreach (var i in FindObjectsOfType<ShopItem>(true))
+        {
+            i.m_Data.Init();
+            i.m_Data.Load();
+        }
+    }
 
     void Start()
     {

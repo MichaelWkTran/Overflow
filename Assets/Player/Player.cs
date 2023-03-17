@@ -26,6 +26,9 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip m_landSound;
     [SerializeField] AudioClip m_deathSound;
 
+    [Header("Other")]
+    public SpriteRenderer m_hatSpriteRenderer;
+
     GameManager m_gameManager;
     Rigidbody2D m_rb;
     Animator m_animator;
