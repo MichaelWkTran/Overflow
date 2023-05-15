@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -80,6 +79,6 @@ public abstract class ShopItemData : ScriptableObject
         
 
         //Load the data of whether the player previously purchased this shop item
-        m_purchased = m_data.m_purchasedItems.Contains(name);
+        if (!m_purchased) m_purchased = m_data.m_purchasedItems.Contains(name);
     }
 }
