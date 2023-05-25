@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_previousNames: []
   m_price: 0
-  m_purchased: 1
+  m_purchased: 0
   m_hatSprite: {fileID: 21300000, guid: d88efd1e9c847034da8802253cf97532, type: 3}
