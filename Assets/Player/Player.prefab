@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2735096493376134817
 Transform:
   m_ObjectHideFlags: 0
@@ -5088,9 +5088,9 @@ MonoBehaviour:
     m_Bits: 8
   jumpParticle: {fileID: 3905876375331599504}
   deathParticle: {fileID: 1455671440154083751}
-  m_jumpSound: {fileID: 0}
-  m_landSound: {fileID: 0}
-  m_deathSound: {fileID: 0}
+  m_jumpSound: {fileID: 8300000, guid: 370569ebcf0276c4ab1b502a6566c50a, type: 3}
+  m_landSound: {fileID: 8300000, guid: 9c7833f634ab837459628233da83a61c, type: 3}
+  m_deathSound: {fileID: 8300000, guid: 245d20fe498c5814bb3ec356272545f2, type: 3}
   m_hatSpriteRenderer: {fileID: 7893168157132882856}
 --- !u!50 &7923779952985647982
 Rigidbody2D:

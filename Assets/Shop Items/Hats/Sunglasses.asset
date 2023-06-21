@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Sunglasses
   m_EditorClassIdentifier: 
   m_previousNames: []
-  m_price: 0
+  m_price: 30
   m_purchased: 0
   m_hatSprite: {fileID: 21300000, guid: 028b40b292811f64da98a32cb854b745, type: 3}

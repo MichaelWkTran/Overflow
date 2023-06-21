@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cowboy
   m_EditorClassIdentifier: 
   m_previousNames: []
-  m_price: 0
+  m_price: 30
   m_purchased: 0
   m_hatSprite: {fileID: 21300000, guid: 2aaf526b18baca741b49fe2ea5b94be4, type: 3}

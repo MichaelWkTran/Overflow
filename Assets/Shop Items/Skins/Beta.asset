@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Beta
   m_EditorClassIdentifier: 
   m_previousNames: []
-  m_price: 1
+  m_price: 30
   m_purchased: 0
   m_skin: {fileID: 22100000, guid: 1fd0fbd0832e5c545b3dfc530a3dbbb4, type: 2}
   m_deathSprite: {fileID: 21300000, guid: d334dc10f2da9714eaaab9804e17df8e, type: 3}

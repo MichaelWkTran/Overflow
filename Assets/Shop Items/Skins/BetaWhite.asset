@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BetaWhite
   m_EditorClassIdentifier: 
   m_previousNames: []
-  m_price: 1
+  m_price: 30
   m_purchased: 0
   m_skin: {fileID: 22100000, guid: 71bf16a818eca9240b0df1f549e644dd, type: 2}
   m_deathSprite: {fileID: 21300000, guid: 8b31f37b359360243a2d81607dce9bf4, type: 3}

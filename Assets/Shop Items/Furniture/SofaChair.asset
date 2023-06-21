@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SofaChair
   m_EditorClassIdentifier: 
   m_previousNames: []
-  m_price: 0
+  m_price: 50
   m_purchased: 0
   m_furnitureSprite: {fileID: 21300000, guid: 0230cffdeb442c5469cc6d75e2e02beb, type: 3}
   m_furniturePosition: {x: 4, y: 2, z: 2}

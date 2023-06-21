@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ScarecrowHat
   m_EditorClassIdentifier: 
   m_previousNames: []
-  m_price: 0
+  m_price: 20
   m_purchased: 0
   m_hatSprite: {fileID: 21300000, guid: c3f188f4edc464f4c8886499971548b3, type: 3}
