@@ -179,7 +179,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,8 +203,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Skin_Wombat_jump_0: 1149833067
-      Skin_Wombat_jump_2: -1749107571
       Skin_Wombat_jump_1: 245048625
+      Skin_Wombat_jump_2: -1749107571
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
