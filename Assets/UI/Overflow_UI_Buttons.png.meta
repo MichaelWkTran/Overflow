@@ -117,31 +117,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Overflow_UI_ShopSign
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 144
-        width: 80
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 224855f0fb8289445ac7890f75cbf307
-      internalID: -187488701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Overflow_UI_Carrot1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 0
         y: 160
         width: 16
         height: 16
@@ -162,7 +141,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Back1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 16
         y: 160
         width: 16
         height: 16
@@ -183,7 +162,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Back2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 160
         width: 16
         height: 16
@@ -204,7 +183,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Home1
       rect:
         serializedVersion: 2
-        x: 144
+        x: 48
         y: 160
         width: 16
         height: 16
@@ -225,7 +204,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Home2
       rect:
         serializedVersion: 2
-        x: 160
+        x: 64
         y: 160
         width: 16
         height: 16
@@ -246,7 +225,7 @@ TextureImporter:
       name: Overflow_UI_Carrot2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 0
         y: 144
         width: 16
         height: 16
@@ -267,7 +246,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Pause1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 16
         y: 144
         width: 16
         height: 16
@@ -288,7 +267,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Pause2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 144
         width: 16
         height: 16
@@ -309,7 +288,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Play1
       rect:
         serializedVersion: 2
-        x: 144
+        x: 48
         y: 144
         width: 16
         height: 16
@@ -330,7 +309,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Play2
       rect:
         serializedVersion: 2
-        x: 160
+        x: 64
         y: 144
         width: 16
         height: 16
@@ -348,31 +327,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_CreditsSign
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 80
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f046f1f8a2f0a9d45b63d2312132a50b
-      internalID: 662370290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Overflow_UI_RockSlider
       rect:
         serializedVersion: 2
-        x: 96
+        x: 0
         y: 128
         width: 16
         height: 16
@@ -393,7 +351,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Settings1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 16
         y: 128
         width: 16
         height: 16
@@ -414,7 +372,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Settings2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 128
         width: 16
         height: 16
@@ -435,7 +393,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Restart1
       rect:
         serializedVersion: 2
-        x: 144
+        x: 48
         y: 128
         width: 16
         height: 16
@@ -456,7 +414,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Restart2
       rect:
         serializedVersion: 2
-        x: 160
+        x: 64
         y: 128
         width: 16
         height: 16
@@ -477,7 +435,7 @@ TextureImporter:
       name: Overflow_UI_Arrow
       rect:
         serializedVersion: 2
-        x: 96
+        x: 0
         y: 112
         width: 16
         height: 16
@@ -498,7 +456,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Exit1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 16
         y: 112
         width: 16
         height: 16
@@ -519,7 +477,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Exit2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 112
         width: 16
         height: 16
@@ -540,7 +498,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_No1
       rect:
         serializedVersion: 2
-        x: 144
+        x: 48
         y: 112
         width: 16
         height: 16
@@ -561,7 +519,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_No2
       rect:
         serializedVersion: 2
-        x: 160
+        x: 64
         y: 112
         width: 16
         height: 16
@@ -579,52 +537,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Shop_Buy
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b20994f5b48861409df7185d241c8cf
-      internalID: -929201581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_ShopCarrots
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 80
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db28ea6fde668e84693c269a74e8080b
-      internalID: 1765608717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Overflow_UI_Buttpn_Credits1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 16
         y: 96
         width: 16
         height: 16
@@ -645,7 +561,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Credits2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 96
         width: 16
         height: 16
@@ -666,7 +582,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Yes1
       rect:
         serializedVersion: 2
-        x: 144
+        x: 48
         y: 96
         width: 16
         height: 16
@@ -687,7 +603,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Yes
       rect:
         serializedVersion: 2
-        x: 160
+        x: 64
         y: 96
         width: 16
         height: 16
@@ -705,31 +621,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Shop_Bought
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c70f913ff5bf90842a1107f39b5cdb90
-      internalID: -1851709720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Overflow_UI_Buttpn_Shop1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 16
         y: 80
         width: 16
         height: 16
@@ -750,7 +645,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Shop2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 80
         width: 16
         height: 16
@@ -771,7 +666,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Share
       rect:
         serializedVersion: 2
-        x: 144
+        x: 48
         y: 80
         width: 16
         height: 16
@@ -792,7 +687,7 @@ TextureImporter:
       name: Overflow_UI_Buttpn_Share4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 64
         y: 80
         width: 16
         height: 16
@@ -809,48 +704,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_ShopCategory
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 160
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60853ed45022cc14abeb00010fa2ae70
-      internalID: -1517709823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Shop_Frame
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a06987ee6ef21448b091ebfef0643a5
-      internalID: 272088370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -862,6 +715,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Overflow_UI_0: 1958572365
       Overflow_UI_10: -1773024300
       Overflow_UI_11: 2136403197
       Overflow_UI_12: -910431984
