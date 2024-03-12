@@ -134,10 +134,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 37
+        width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Burrow_FG_Rock_Left_And_Pause_Strip2_1
       rect:
         serializedVersion: 2
-        x: 37
+        x: 64
         y: 0
-        width: 37
+        width: 64
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Burrow_FG_Rock_Left_And_Pause_Strip2_1: -1101939194
       Burrow_FG_Rock_Left_And_Pause_Strip2_0: 1240549483
+      Burrow_FG_Rock_Left_And_Pause_Strip2_1: -1101939194
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
