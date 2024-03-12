@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_previousNames: []
   m_price: 30
-  m_purchased: 0
-  m_hatSprite: {fileID: 21300000, guid: eccf8ec85e43a6f45893f5fab0b1872b, type: 3}
+  m_purchased: 1
+  m_hatSprite: {fileID: -164028702, guid: f0ebaadf482df904c80c03e2d0555d04, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   m_previousNames: []
   m_price: 30
   m_purchased: 0
-  m_hatSprite: {fileID: 21300000, guid: 028b40b292811f64da98a32cb854b745, type: 3}
+  m_hatSprite: {fileID: -1717650855, guid: f0ebaadf482df904c80c03e2d0555d04, type: 3}
