@@ -186,7 +186,7 @@ TextureImporter:
         x: 48
         y: 160
         width: 64
-        height: 32
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopLock
+      name: Overflow_UI_Menu_ShopDisabled
       rect:
         serializedVersion: 2
         x: 0
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopBought
+      name: Overflow_UI_Menu_ShopBuy
       rect:
         serializedVersion: 2
         x: 48
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopEquipped
+      name: Overflow_UI_Menu_ShopBough
       rect:
         serializedVersion: 2
         x: 96
@@ -410,6 +410,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Menu_ShopSelect
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1da262af9f3604c8ae8510bc0fbc66
+      internalID: -411920247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Menu_ShopUsing
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25eb323599f1e534cabdc7021e08c55c
+      internalID: 1903953822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -431,11 +473,13 @@ TextureImporter:
       Overflow_UI_Menu_Furn2: 743831546
       Overflow_UI_Menu_Hats1: -231528625
       Overflow_UI_Menu_Hats2: -1751642534
-      Overflow_UI_Menu_ShopBought: -1835493895
+      Overflow_UI_Menu_ShopBough: 480374871
       Overflow_UI_Menu_ShopButton: -1896624443
-      Overflow_UI_Menu_ShopEquipped: 480374871
-      Overflow_UI_Menu_ShopLock: -1632430255
+      Overflow_UI_Menu_ShopBuy: -1835493895
+      Overflow_UI_Menu_ShopDisabled: -1632430255
+      Overflow_UI_Menu_ShopSelect: -411920247
       Overflow_UI_Menu_ShopSign: 453688508
+      Overflow_UI_Menu_ShopUsing: 1903953822
       Overflow_UI_Menu_Sign1: 406963473
       Overflow_UI_Menu_Sign2: 166099642
       Overflow_UI_Menu_Skins1: 553107508
