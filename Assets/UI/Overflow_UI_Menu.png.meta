@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopSelect
+      name: Overflow_UI_Menu_ShopUsing
       rect:
         serializedVersion: 2
         x: 144
@@ -425,29 +425,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b1da262af9f3604c8ae8510bc0fbc66
-      internalID: -411920247
+      spriteID: 25eb323599f1e534cabdc7021e08c55c
+      internalID: 1903953822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopUsing
+      name: Overflow_UI_Menu_Cred_BG
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 64
+        x: 80
+        y: 224
+        width: 128
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25eb323599f1e534cabdc7021e08c55c
-      internalID: 1903953822
+      spriteID: 6f868f33bf945e34297c6b2c970b138d
+      internalID: 2141757518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Menu_Cred_FG
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 128
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b2e2077835fbf459788d98dcfb33b8
+      internalID: 1000851239
       vertices: []
       indices: 
       edges: []
@@ -468,6 +489,8 @@ TextureImporter:
       Overflow_UI_Menu_7: -1718046805
       Overflow_UI_Menu_9: 1526345145
       Overflow_UI_Menu_CarrotSign: -371892059
+      Overflow_UI_Menu_Cred_BG: 2141757518
+      Overflow_UI_Menu_Cred_FG: 1000851239
       Overflow_UI_Menu_CreditsSign: -4773840
       Overflow_UI_Menu_Furn1: 1031404657
       Overflow_UI_Menu_Furn2: 743831546
