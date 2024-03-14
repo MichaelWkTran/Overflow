@@ -704,6 +704,300 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Credbird_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88728afde9f0d3e4c9ab205be5f0db50
+      internalID: 1021064868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Buttons_CredYT_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a6b6e1394630e4cbbd6a6c6fee8611
+      internalID: 667843083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Buttons_CredYT_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d689acc195f03234ea06aa65df5302d1
+      internalID: 1446495579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Buttons_CredFB_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97ebcfe27650b347a712efa26e2da90
+      internalID: 778679097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Buttons_CredTumblr_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef231d212a78ca4eaa496b0997a5aac
+      internalID: 1860175844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Buttons_CredTumblr_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ef58556015ee2458b038d0740fe414
+      internalID: 1438031320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Buttons_CredItch_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31aa940164d5eb945b4d1d310e786dbb
+      internalID: 981027656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Credbird_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8370f916a9848489b1970a4e1b3ded
+      internalID: -910825440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Credbird_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fdc9b7c0edfa546842b44a43092ff4
+      internalID: 1728933821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Buttons_CredFB_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a86e45379111404d969a9a683cf3f70
+      internalID: -514535489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Buttons_CredTumblr_
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d61de5d337933549bca7ac8b4276620
+      internalID: -1135667647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Credbird_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5932e06d0a3c2184cbc87df5a9019348
+      internalID: -1863203113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Credbird_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba9d02031e70de49ad05338d84b7c3d
+      internalID: 1986217429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_UI_Credbird_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89c9c280c6b2c94aa2a2d5ff2c1b68f
+      internalID: 1272659649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -769,6 +1063,18 @@ TextureImporter:
       Overflow_UI_89: -1647356052
       Overflow_UI_90: -187488701
       Overflow_UI_Arrow: -1378315445
+      Overflow_UI_Buttons_CredFB_1: 778679097
+      Overflow_UI_Buttons_CredFB_2: -514535489
+      Overflow_UI_Buttons_CredFB_3: 1371788193
+      Overflow_UI_Buttons_CredItch_1: 981027656
+      Overflow_UI_Buttons_CredItch_3: 674002073
+      Overflow_UI_Buttons_CredTumblr_: -1135667647
+      Overflow_UI_Buttons_CredTumblr_1: 1860175844
+      Overflow_UI_Buttons_CredTumblr_2: -1782572962
+      Overflow_UI_Buttons_CredTumblr_3: 1438031320
+      Overflow_UI_Buttons_CredYT_1: 667843083
+      Overflow_UI_Buttons_CredYT_2: 1081546120
+      Overflow_UI_Buttons_CredYT_3: 1446495579
       Overflow_UI_Buttpn_Back1: 2018275118
       Overflow_UI_Buttpn_Back2: 2118808499
       Overflow_UI_Buttpn_Credits1: -411656380
@@ -795,6 +1101,12 @@ TextureImporter:
       Overflow_UI_Buttpn_Yes1: 1736699829
       Overflow_UI_Carrot1: -1209566214
       Overflow_UI_Carrot2: 1357700572
+      Overflow_UI_Credbird_1: 1021064868
+      Overflow_UI_Credbird_2: -1863203113
+      Overflow_UI_Credbird_3: -910825440
+      Overflow_UI_Credbird_4: 1986217429
+      Overflow_UI_Credbird_5: 1728933821
+      Overflow_UI_Credbird_6: 1272659649
       Overflow_UI_CreditsSign: 662370290
       Overflow_UI_RockSlider: 630230561
       Overflow_UI_ShopCarrots: 1765608717

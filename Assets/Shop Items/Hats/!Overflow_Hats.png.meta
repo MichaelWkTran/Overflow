@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0a089d6b64e0fe4fb99cfd558e42453
+guid: f0ebaadf482df904c80c03e2d0555d04
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,12 +117,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopSign
+      name: Overflow_Hats_0
       rect:
         serializedVersion: 2
         x: 0
         y: 224
-        width: 80
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -131,344 +131,239 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7281748b6e8c5924eb1062537262178d
-      internalID: 453688508
+      spriteID: 458ce70826f50314ba341fef3edaf69b
+      internalID: -164028702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_CreditsSign
+      name: Overflow_Hats_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 80
+        x: 32
+        y: 224
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.31, y: 0.72}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9add2eed189094743a68c0e3b45346d2
-      internalID: -4773840
+      spriteID: 3d6bda3fdba929b489e1b40028aac3aa
+      internalID: 1855738704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_Sign1
+      name: Overflow_Hats_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 175
-        width: 48
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 849e2e6da394751489d27c6cb502b902
-      internalID: 406963473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_CarrotSign
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 160
-        width: 64
+        x: 64
+        y: 224
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49, y: 0.32}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b60d98e94e9ee3548b8f0a53e6cfc8fa
-      internalID: -371892059
+      spriteID: a4c6892d139a186409ac55dd8898ac96
+      internalID: -450823533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_Skins1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 56
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf45818872ecb364dbf6e2cde9880ac9
-      internalID: 553107508
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopDisabled
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4edc0b94f7d4f444e9e9d541ceded786
-      internalID: -1632430255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopBuy
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01dd1e39a5568064c8b5f264fcc17b68
-      internalID: -1835493895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopBough
+      name: Overflow_Hats_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
-        width: 48
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61d3f2901fad8554f840278bb6318021
-      internalID: 480374871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_Sign2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 48
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a1bef33c5517eb498fa7645d1184df7
-      internalID: 166099642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_Skins2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 56
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c492c931a3506c4fbff925b7ac9bc23
-      internalID: 983920295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_Hats1
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 128
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7965f04a507b034bbb0f35989f60334
-      internalID: -231528625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_Hats2
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 96
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b5ec26c5ca6474429bc5c1fe8181ac0
-      internalID: -1751642534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_Furn1
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 128
-        width: 56
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5dac0423650c9f4781efa635c2b8633
-      internalID: 1031404657
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_Furn2
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 96
-        width: 56
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20540d95308b0d945a609683a1f434c5
-      internalID: 743831546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_ShopUsing
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25eb323599f1e534cabdc7021e08c55c
-      internalID: 1903953822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overflow_UI_Menu_Cred_BG
-      rect:
-        serializedVersion: 2
-        x: 80
         y: 224
-        width: 128
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.53, y: 0.32}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f868f33bf945e34297c6b2c970b138d
-      internalID: 2141757518
+      spriteID: 53b1d916e5d5a0345a4b1dbc8704e459
+      internalID: -484377674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overflow_UI_Menu_Cred_FG
+      name: Overflow_Hats_4
       rect:
         serializedVersion: 2
-        x: 80
-        y: 192
-        width: 128
+        x: 128
+        y: 224
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47b2e2077835fbf459788d98dcfb33b8
-      internalID: 1000851239
+      spriteID: 06ef0bb01185b2449bc52f13ee9f5b4a
+      internalID: -1301633830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_Hats_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.53, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf7c8db3384fc748b6d26a9a43bc9aa
+      internalID: -421906158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_Hats_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.44, y: 0.66}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fb056b71de60c42a933e254cf24730
+      internalID: 1473343030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_Hats_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707c0c2010a3a4c478d31dd5ec47c0b4
+      internalID: 1780984799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_Hats_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3283a9456a75e684abd9ffad2b8e21f0
+      internalID: -1717650855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_Hats_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.6, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95d0b895b4a89c4b97c5d9f0fd8c8cd
+      internalID: 1937825387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Overflow_Hats_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64f4be87fde23f459010cf11538dac6
+      internalID: 827423180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!Overflow_Hats_0'
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.53, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0203aee1809059d4a9dc2471efe72d72
+      internalID: -1220635116
       vertices: []
       indices: 
       edges: []
@@ -484,29 +379,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Overflow_UI_Menu_13: -1920015233
-      Overflow_UI_Menu_5: -547238696
-      Overflow_UI_Menu_7: -1718046805
-      Overflow_UI_Menu_9: 1526345145
-      Overflow_UI_Menu_CarrotSign: -371892059
-      Overflow_UI_Menu_Cred_BG: 2141757518
-      Overflow_UI_Menu_Cred_FG: 1000851239
-      Overflow_UI_Menu_CreditsSign: -4773840
-      Overflow_UI_Menu_Furn1: 1031404657
-      Overflow_UI_Menu_Furn2: 743831546
-      Overflow_UI_Menu_Hats1: -231528625
-      Overflow_UI_Menu_Hats2: -1751642534
-      Overflow_UI_Menu_ShopBough: 480374871
-      Overflow_UI_Menu_ShopButton: -1896624443
-      Overflow_UI_Menu_ShopBuy: -1835493895
-      Overflow_UI_Menu_ShopDisabled: -1632430255
-      Overflow_UI_Menu_ShopSelect: -411920247
-      Overflow_UI_Menu_ShopSign: 453688508
-      Overflow_UI_Menu_ShopUsing: 1903953822
-      Overflow_UI_Menu_Sign1: 406963473
-      Overflow_UI_Menu_Sign2: 166099642
-      Overflow_UI_Menu_Skins1: 553107508
-      Overflow_UI_Menu_Skins2: 983920295
+      '!Overflow_Hats_0': -1220635116
+      Overflow_Hats_0: -164028702
+      Overflow_Hats_1: 1855738704
+      Overflow_Hats_10: 827423180
+      Overflow_Hats_2: -450823533
+      Overflow_Hats_3: -484377674
+      Overflow_Hats_4: -1301633830
+      Overflow_Hats_5: -421906158
+      Overflow_Hats_6: 1473343030
+      Overflow_Hats_7: 1780984799
+      Overflow_Hats_8: -1717650855
+      Overflow_Hats_9: 1937825387
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
