@@ -202,6 +202,7 @@ MonoBehaviour:
   m_data: {fileID: 11400000, guid: 4bef3cb832f0fa74793a0c73588ceafa, type: 2}
   m_itemButton: {fileID: 6747337592735273260}
   m_equipSprite: {fileID: 480374871, guid: c0a089d6b64e0fe4fb99cfd558e42453, type: 3}
+  m_enabledSprite: {fileID: 1903953822, guid: c0a089d6b64e0fe4fb99cfd558e42453, type: 3}
   m_purchaseMessage: {fileID: 792238388047415988}
   m_priceText: {fileID: 6568432372574972558}
 --- !u!114 &4639413555976815013
@@ -264,8 +265,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 1903953822, guid: c0a089d6b64e0fe4fb99cfd558e42453, type: 3}
-    m_SelectedSprite: {fileID: 1903953822, guid: c0a089d6b64e0fe4fb99cfd558e42453, type: 3}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: -1632430255, guid: c0a089d6b64e0fe4fb99cfd558e42453, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal

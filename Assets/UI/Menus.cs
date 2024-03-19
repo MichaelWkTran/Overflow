@@ -10,6 +10,7 @@ public class Menus : MonoBehaviour
 
     [Header("Title Screen")]
     [SerializeField] RectTransform m_titleScreen;
+    [SerializeField] RectTransform m_highscorePannel;
     [SerializeField] TMPro.TMP_Text m_highScoreText;
 
     [Header("Settings Screen")]
@@ -45,7 +46,7 @@ public class Menus : MonoBehaviour
             //Set the high score text on the title screen
             int highScore = SaveSystem.m_data.m_highScore;
             if (highScore > 0) m_highScoreText.text = "High Score: " + highScore.ToString();
-            else m_highScoreText.gameObject.SetActive(false);
+            else m_highscorePannel.gameObject.SetActive(false);
 
             //Set settings in settings menu
             if (GameManager.m_applicationStarted)
@@ -132,6 +133,12 @@ public class Menus : MonoBehaviour
             else child.gameObject.SetActive(false);
         }
     }
+
+    public void OnShopPurchase()
+    {
+        m_shopCarrotText.text = SaveSystem.m_data.m_carrots.ToString();
+    }
+
     #endregion
 
     #region Credits Menu
