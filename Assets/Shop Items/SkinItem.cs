@@ -38,4 +38,5 @@ public class SkinItem : ShopItemData
         //Load data on whether the player had enabled this skin
         if (m_data.m_currentSkinName == name) SetSkin();
     }
+    public override bool IsEnabled() { return m_data.m_currentSkinName == name; }
 }

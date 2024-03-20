@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using static SaveSystem;
 
@@ -7,7 +8,8 @@ public class FurnitureItem : ShopItemData
     [SerializeField] Sprite m_furnitureSprite;
     [SerializeField] Vector3 m_furniturePosition;
     [HideInInspector] public Transform m_furnitureObject; //The created furniture in the title screen
-    bool m_enabled = false; //Whether the furniture is shown on the title screen
+    [NonSerialized] bool m_enabled = false; //Whether the furniture is shown on the title screen
+    
     public bool m_Enabled
     {
         get { return m_enabled; }
@@ -42,7 +44,10 @@ public class FurnitureItem : ShopItemData
     }
     public override void Load()
     {
+        base.Load();
+
         //Load data on whether the player had enabled this furniture
         if (m_data.m_enabledFurniture.Contains(name)) m_Enabled = true;
     }
+    public override bool IsEnabled() { return m_data.m_enabledFurniture.Contains(name); }
 }

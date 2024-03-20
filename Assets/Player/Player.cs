@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
         }
         else if (isGrounded) { }
         else if (m_rb.velocity.y > 0.0f) m_animator.Play("Jump");
-        else m_animator.Play("Fall");
+        //else m_animator.Play("Fall");
     }
 
     public void Jump()

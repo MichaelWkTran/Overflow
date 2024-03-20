@@ -1217,6 +1217,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6204968805209278345, guid: 3448fe4c784443145a736a1f7568220d, type: 3}
+      propertyPath: m_Size.x
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204968805209278345, guid: 3448fe4c784443145a736a1f7568220d, type: 3}
+      propertyPath: m_Offset.x
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 6248409787022725171, guid: 3448fe4c784443145a736a1f7568220d, type: 3}
       propertyPath: m_Name
       value: LevelSegment3

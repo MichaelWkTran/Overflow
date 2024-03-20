@@ -39,4 +39,6 @@ public class HatItem : ShopItemData
             SetHat();
         }
     }
+    public override bool IsEnabled() { return m_data.m_currentHatName == name; }
+
 }
