@@ -6017,7 +6017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_titleScreen: {fileID: 2069273360}
-  m_highscorePannel: {fileID: 0}
+  m_highscorePannel: {fileID: 540336185}
   m_highScoreText: {fileID: 1051456849}
   m_settingsScreen: {fileID: 1534995694}
   m_audioMixer: {fileID: 24100000, guid: 82afce9e232076740bbb28dcf438766f, type: 2}
